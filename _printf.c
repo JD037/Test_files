@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 #include <stdarg.h> /* va_list, va_start, va_arg, va_end */
 
 /**
