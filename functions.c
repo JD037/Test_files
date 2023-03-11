@@ -95,13 +95,12 @@ int print_binary(va_list list)
 /**
  * print_hex - Prints a hexadecimal number
  * @list: List of arguments
- * @type: Type of hex (uppercase or lowercase)
  *
  * Return: Number of characters printed
  */
-int print_hex(va_list list, int type)
+int print_hex(va_list args)
 {
-	unsigned int num = va_arg(list, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	int i = 0;
 
 	if (num == 0)
@@ -110,7 +109,7 @@ int print_hex(va_list list, int type)
 		i++;
 	}
 	else
-		i += print_hex_helper(num, type);
+		i += print_hex_helper(num);
 
 	return (i);
 }

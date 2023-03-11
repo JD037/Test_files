@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <string.h>
 
 /** struct print_fn - struct containing a function and corresponding specifier
  * @specifier: the specifier character
@@ -27,6 +28,13 @@ int print_octal(va_list args);
 int print_pointer(va_list args);
 int print_percent(va_list args);
 int print_reversed(va_list args);
+int print_binary(va_list list);
 int (*get_print_fn(const char c))(va_list);
+
+/* Helper function prototypes */
+int print_int_helper(int num);
+int print_binary_helper(unsigned int num);
+int print_hex_helper(unsigned int num);
+int print_octal_helper(unsigned int num);
 
 #endif /* MAIN_H */

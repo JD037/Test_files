@@ -35,21 +35,20 @@ int print_octal_helper(unsigned int num)
 /**
  * print_hex_helper - recursively prints an integer in hexadecimal
  * @num: the integer to print
- * @type: the letter case of the hexadecimal digits ('x' or 'X')
  *
  * Return: the number of digits printed
  */
-int print_hex_helper(unsigned int num, char type)
+int print_hex_helper(unsigned int num)
 {
 	int digits = 0;
 
 	if (num / 16)
-		digits += print_hex_helper(num / 16, type);
+		digits += print_hex_helper(num / 16);
 
 	if (num % 16 < 10)
 		digits += _putchar(num % 16 + '0');
 	else
-		digits += _putchar(num % 16 + type - 33);
+		digits += _putchar(num % 16 + 'a' - 10);
 
 	return (digits);
 }
