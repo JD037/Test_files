@@ -76,7 +76,7 @@ int print_pointer(va_list args)
 	if (!p)
 		return (_printf("(nil)"));
 
-	return (_printf("0x%lx", (unsigned long)p));
+	return (_printf("%p", p));
 }
 
 /**
