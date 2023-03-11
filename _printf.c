@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				char *str = va_arg(args, char *);
 				if (str == NULL)
 					str = "(null)";
-				count += print_reversed(str);
+				count += print_reversed(args);
 			}
 			else
 			{
