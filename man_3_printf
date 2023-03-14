@@ -1,0 +1,68 @@
+_PRINTF.C "March 2023" "Version 1.0" "Holberton Printf Project"
+
+NAME
+_printf - A custom implementation of printf function.
+
+SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+
+DESCRIPTION
+
+_printf is a custom implementation of the standard printf function. It takes a string (format) as input and
+prints the corresponding output to the standard output. _printf supports the following format specifiers:
+
+
+   %c: prints a single character
+   %s: prints a string
+   %%: prints a percent symbol
+   %d: prints an integer in decimal format
+   %i: prints an integer in decimal format
+   %u: prints an unsigned integer in decimal format
+   %o: prints an integer in octal format
+   %x: prints an integer in lowercase hexadecimal format
+   %X: prints an integer in uppercase hexadecimal format
+
+If an unsupported format specifier is encountered, _printf will print it literally.
+
+RETURN VALUE
+
+The number of characters printed by _printf (excluding the null byte used to end output to strings) is returned.
+
+EXAMPLES
+
+Example 1:
+
+char c = 'H';
+char *str = "Hello, World!";
+int i = 42;
+unsigned int u = 4294967295;
+int o = 01234567;
+int x = 0x123abc;
+_printf("%c %s\n", c, str);
+_printf("%%\n");
+_printf("%d %i %u %o %x %X\n", i, i, u, o, x, x);
+
+Output:
+          
+H Hello, World!%
+42 42 4294967295 1234567 123abc 123ABC
+
+Example 2:
+
+char *str = NULL;
+_printf("%s\n", str);
+
+Output:
+(null)
+
+SEE ALSO
+putchar(3)
+
+BUGS
+// ADD THIS LATER //
+
+PRINTF AUTHORS
+Alton Andrews, Josh Davis.
